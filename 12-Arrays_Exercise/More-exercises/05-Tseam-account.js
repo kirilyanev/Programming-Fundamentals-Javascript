@@ -1,6 +1,5 @@
 function tseamAccount(input) {
     let games = input[0].split(' ');
-    let isCommandGood;
 
     for (let i = 1; i < input.length; i++) {
         let accountAction = input[i].split(' ');
@@ -9,48 +8,28 @@ function tseamAccount(input) {
 
         if (command === 'Play!') {
             break;
-        } else if (command === 'Install') {
-            isCommandGood = true;
-            for (let j = 0; j < games.length; j++) {
-                if (games[j] === newGame) {
-                    isCommandGood = false;
-                    break;
-                }
-            }
 
-            if(isCommandGood = true) {
-                games.push(newGame);
-            }
+        } else if (command === 'Install' && games.includes(newGame) === false) {
+            games.push(newGame);
 
-        } else if (command === 'Uninstall') {
-            for (let j = 0; j < games.length; j++) {
-                if (games[j] === newGame) {
-                    games.splice(j, 1);
-                    break;
-                }
-            }
-        } else if (command === 'Update') {
-            for (let k = 0; k < games.length; k++) {
-                if (games[k] === newGame) {
-                    games.splice(k, 1);
-                    games.push(newGame);
-                    break;
-                }
-            }
+        } else if (command === 'Uninstall' && games.includes(newGame)) {
+            let index = games.indexOf(newGame);
+            games.splice(index, 1);
+
+        } else if (command === 'Update' && games.includes(newGame)) {
+            let index = games.indexOf(newGame);
+            games.splice(index, 1);
+            games.push(newGame);
         } else if (command === 'Expansion') {
-            let expansion = command.split(' ');
+            let expansion = newGame.split('-');
             let game = expansion[0];
 
-            for (let l = 0; l < games.length; l++) {
-                if (games[l] === game) {
-                    let expandedGame = expansion.join(':');
-                    games.splice(l + 1, 0, expandedGame)
-                    break;
-                }
+            if (games.includes(game)) {
+                let index = games.indexOf(game);
+                games.splice(index + 1, 0, expansion.join(':'));
             }
         }
     }
-
     console.log(games.join(' '));
 }
-tseamAccount(['CS WoW Diablo','Install LoL','Uninstall WoW','Update Diablo','Expansion CS-Go','Play!']);
+tseamAccount(['CS WoW Diablo','Uninstall XCOM','Update PeshoGame','Update WoW','Expansion Civ-V','Play!']);
