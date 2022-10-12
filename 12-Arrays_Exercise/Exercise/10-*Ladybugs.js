@@ -15,7 +15,7 @@ function ladyBugsField(input) {
 
     for (let i = 0; i < ladybugCount; i++) {
         let currentLadybugIndex = ladybugIndex[i];
-        if (currentLadybugIndex < field.length) {
+        if (currentLadybugIndex < field.length && currentLadybugIndex >= 0) {
             field[currentLadybugIndex] = 1;  // Creating an array with positions of the ladybugs inside of it;
         }
     }
@@ -35,7 +35,7 @@ function ladyBugsField(input) {
                 field[flyingLadybug] = 0;
                 let fly = true;
                 while (fly) {
-                    if (landingPosition > field.length - 1) {  // Check if ladyBug flies away
+                    if (landingPosition < 0 || landingPosition > field.length - 1) {  // Check if ladyBug flies away
                         isFlying = false;
                         break;
                     }
@@ -61,7 +61,7 @@ function ladyBugsField(input) {
                 field[flyingLadybug] = 0;
                 let fly = true;
                 while (fly) {
-                    if (landingPosition < 0) { // Check if ladyBug flies away
+                    if (landingPosition < 0 || landingPosition > field.length - 1) { // Check if ladyBug flies away
                         isFlying = false;
                         break;
                     }
@@ -79,4 +79,5 @@ function ladyBugsField(input) {
     }
     console.log(field.join(' '));
 }
-ladyBugsField([ 3, '0 1','0 right -1','2 right 1' ]);
+// ladyBugsField([ 3, '0 1','0 right 1','2 right 1' ]);
+ladyBugsField([ 5, '3','3 left 2','1 left -2']);
