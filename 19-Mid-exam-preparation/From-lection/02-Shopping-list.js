@@ -31,7 +31,7 @@ function shopping(input) {
             }
         }
     }
-    console.log(groceries.join(','));
+    console.log(groceries.join(', '));
 }
 shopping((["Milk!Pepper!Salt!Water!Banana",
     "Urgent Salt",

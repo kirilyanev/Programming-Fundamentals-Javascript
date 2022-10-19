@@ -8,7 +8,9 @@ function plunderCalc(input) {
         totalPlunder += plunderForDay;
         if (index % 3 === 0) {
             totalPlunder += (plunderForDay * 0.50);
-        } else if (index % 5 === 0) {
+        }
+
+        if (index % 5 === 0) {
             totalPlunder -= (totalPlunder * 0.30);
         }
     }
