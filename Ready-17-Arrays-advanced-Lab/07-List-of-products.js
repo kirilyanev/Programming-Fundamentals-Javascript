@@ -5,4 +5,4 @@ function productSorting(products) {
         console.log(`${index + 1}.${sortedProducts[index]}`);
     }
 }
-productSorting(['Watermelon', 'Banana', 'Apples']);
+productSorting(['Watermelon', 'Banana', 'Apples',]);

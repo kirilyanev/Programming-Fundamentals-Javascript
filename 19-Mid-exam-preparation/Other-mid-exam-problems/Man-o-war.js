@@ -51,7 +51,7 @@ function battle(input) {
             let needRepair = maxCapacity * 0.20;
             for (let j = 0; j < pirateStatus.length; j++) {
                 if (pirateStatus[j] < needRepair) {
-                    sectionRepairCount ++;
+                    sectionRepairCount++;
                 }
             }
 
@@ -75,10 +75,10 @@ function battle(input) {
     console.log(`Pirate ship status: ${pirateShipSum}\nWarship status: ${warshipSum}`);
 }
 battle(["2>3>4>5>2",
-"6>7>8>9>10>11",
-"20",
-"Status",
-"Fire 2 3",
-"Defend 0 4 11",
-"Repair 3 18",
-"Retire"]);
+    "6>7>8>9>10>11",
+    "20",
+    "Status",
+    "Fire 2 3",
+    "Defend 0 4 11",
+    "Repair 3 18",
+    "Retire"]);
