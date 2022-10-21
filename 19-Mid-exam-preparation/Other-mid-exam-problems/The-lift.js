@@ -10,8 +10,10 @@ function lift(input) {
             currentWagon += 1;
             peopleWaiting -= 1;
         }
+        
         lift[i] = currentWagon;
     }
+
     let peopleOnLift = 0;
 
     lift.forEach(element => {
@@ -26,5 +28,5 @@ function lift(input) {
         console.log(lift.join(' '));
     }
 }
-lift(["15","0 0 0 0 0"]);
-lift(["20","0 2 0"]);
+lift(["15", "0 0 0 0 0"]);
+lift(["20", "0 2 0"]);
