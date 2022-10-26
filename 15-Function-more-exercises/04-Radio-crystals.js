@@ -1,5 +1,3 @@
-// Only 14/100 in judge.
-
 function crystalProcessing(input) {
     const targetThickness = input[0];
 
@@ -20,6 +18,7 @@ function crystalProcessing(input) {
         let xRayCount = 0;
 
         console.log(`Processing chunk ${currentThickness} microns`);
+
         while (currentThickness !== targetThickness) {
             while (currentThickness / 4 >= targetThickness) {
                 currentThickness = cut(currentThickness);
@@ -30,29 +29,29 @@ function crystalProcessing(input) {
             }
 
             if (cutCount > 0) {
-                currentThickness = Math.floor(currentThickness);
+                currentThickness = transportAndWash(currentThickness);
                 console.log(`Cut x${cutCount}`);
                 console.log('Transporting and washing');
             }
 
-            while (currentThickness - (currentThickness * 0.2) > targetThickness) {
+            while (currentThickness - (currentThickness * 0.2) >= targetThickness) {
                 currentThickness = lap(currentThickness);
                 lapCount++;
             }
 
             if (lapCount > 0) {
-                currentThickness = Math.floor(currentThickness);
+                currentThickness = transportAndWash(currentThickness);
                 console.log(`Lap x${lapCount}`);
                 console.log('Transporting and washing');
             }
 
-            while (currentThickness - 20 > targetThickness) {
+            while (currentThickness - 20 >= targetThickness) {
                 currentThickness = grind(currentThickness);
                 grindCount++;
             }
 
             if (grindCount > 0) {
-                currentThickness = Math.floor(currentThickness);
+                currentThickness = transportAndWash(currentThickness);
                 console.log(`Grind x${grindCount}`);
                 console.log('Transporting and washing');
             }
@@ -63,7 +62,7 @@ function crystalProcessing(input) {
             }
 
             if (etchCount > 0) {
-                currentThickness = Math.floor(currentThickness);
+                currentThickness = transportAndWash(currentThickness);
                 console.log(`Etch x${etchCount}`);
                 console.log('Transporting and washing');
             }
@@ -73,13 +72,13 @@ function crystalProcessing(input) {
                 xRayCount = 1;
             }
 
-            if (xRayCount = 1) {
+            if (xRayCount == 1) {
                 console.log('X-ray x1');
+                break;
             }
         }
 
         console.log(`Finished crystal ${targetThickness} microns`);
     }
 }
-//crystalProcessing([1375, 50000]);
 crystalProcessing([1000, 4000, 8100]);

@@ -21,12 +21,13 @@ function pig(input) {
             return console.log('Merry must go to the pet store!');
         }
     }
+    
     const foodLeft = foodQuantity / 1000;
     const hayLeft = hayQuantity / 1000;
     const coverLeft = coverQuantity / 1000;
 
     console.log(`Everything is fine! Puppy is happy! Food: ${foodLeft.toFixed(2)}, Hay: ${hayLeft.toFixed(2)}, Cover: ${coverLeft.toFixed(2)}.`);
 }
-pig((["10", "5", "5.2", "1"]));
-pig((["1", "1.5", "3", "1.5"]));
-pig(["9","5","5.2","1"]);
+pig(["10", "5", "5.2", "1"]);
+pig(["1", "1.5", "3", "1.5"]);
+pig(["9", "5", "5.2", "1"]);
