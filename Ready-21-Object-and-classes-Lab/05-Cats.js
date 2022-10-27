@@ -8,7 +8,7 @@ function cats(input) {
 
         meow() {
             console.log(`${this.name}, age ${this.age} says Meow`);
-            }
+        }
     }
 
     for (const line of input) {
@@ -20,8 +20,6 @@ function cats(input) {
 
         cat.meow();
     }
-
-    
 }
 
 cats(['Mellow 2', 'Tom 5']);
