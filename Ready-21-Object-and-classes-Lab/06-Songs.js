@@ -1,39 +1,71 @@
-function songs(input) {
-    let numberOfSongs = input.shift();
-    let checkTypeList = input.pop();
+// function songs(input) {
+//     let numberOfSongs = input.shift();
+//     let checkTypeList = input.pop();
 
+//     class Song {
+//         constructor(typeList, name, time) {
+//             this.typeList = typeList;
+//             this.name = name;
+//             this.time = time;
+//         }
+
+//         printName() {
+
+//             if (checkTypeList === 'all') {
+//                 console.log(this.name);
+//             } else if (this.typeList === checkTypeList) {
+//                 console.log(this.name);
+//             }
+//         }
+//     }
+
+//     for (let i = 0; i < numberOfSongs; i++) {
+//         let songData = input[i].split('_');
+
+//         let list = songData[0];
+//         let songName = songData[1];
+//         let songLength = songData[2];
+
+//         let song = new Song(list, songName, songLength);
+
+//         song.printName();
+//     }
+// }
+
+// songs([3,
+//     'favourite_DownTown_3:14',
+//     'favourite_Kiss_4:16',
+//     'favourite_Smooth Criminal_4:01',
+//     'favourite']);
+
+
+// Second solution
+
+function songs(input) {
     class Song {
-        constructor(typeList, name, time) {
-            this.typeList = typeList;
+        constructor(type, name, time) {
+            this.type = type;
             this.name = name;
             this.time = time;
         }
-
-        printName() {
-
-            if (checkTypeList === 'all') {
-                console.log(this.name);
-            } else if (this.typeList === checkTypeList) {
-                console.log(this.name);
-            }
-        }
     }
 
+    let songs = [];
+    let numberOfSongs = input.shift();
+    let typeSong = input.pop();
+
     for (let i = 0; i < numberOfSongs; i++) {
-        let songData = input[i].split('_');
+        let [type, name, time] = input[i].split('_');
+        let song = new Song(type, name, time);
+        songs.push(song);
+    }
 
-        let list = songData[0];
-        let songName = songData[1];
-        let songLength = songData[2];
-
-        let song = new Song(list, songName, songLength);
-
-        song.printName();
+    if (typeSong === 'all') {
+        songs.forEach((i) => console.log(i.name));
+    } else {
+        let filtered = songs.filter((i) => i.type === typeSong);
+        filtered.forEach((i) => console.log(i.name));
     }
 }
 
-songs([3,
-    'favourite_DownTown_3:14',
-    'favourite_Kiss_4:16',
-    'favourite_Smooth Criminal_4:01',
-    'favourite']);
+songs([3, 'favourite_DownTown_3:14', 'favourite_Kiss_4:16', 'favourite_Smooth Criminal_4:01', 'favourite']);
