@@ -1,17 +1,16 @@
 function makeDictionary(input) {
     let dictionary = {};
-    let arr = [];
 
     for (const line of input) {
         const definitionObject = JSON.parse(line);
-        Object.assign(dictionary,definitionObject);
+        Object.assign(dictionary, definitionObject);
     }
 
-    let sortedDictionary = Object.keys(dictionary).sort((a,b) => a.localeCompare(b));
+    let sortedDictionary = Object.keys(dictionary).sort((a, b) => a.localeCompare(b));
 
     for (const term of sortedDictionary) {
         console.log(`Term: ${term} => Definition: ${dictionary[term]}`);
-    }   
+    }
 }
 
 makeDictionary([
@@ -20,4 +19,4 @@ makeDictionary([
     '{"Boiler":"A fuel-burning apparatus or container for heating water."}',
     '{"Tape":"A narrow strip of material, typically used to hold or fasten something."}',
     '{"Microphone":"An instrument for converting sound waves into electrical energy variations which may then be amplified, transmitted, or recorded."}'
-    ])
+])
