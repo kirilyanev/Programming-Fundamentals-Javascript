@@ -5,11 +5,11 @@ function makePhoneBook(input) {
         let [person, phoneNumber] = line.split(' ');
         phoneBook[person] = phoneNumber;
     }
-    let {Peter,Bill} = phoneBook
-    console.log(Bill);
-    // for (const key in phoneBook) {
-    //     console.log(`${key} -> ${phoneBook[key]}`);
-    // }
+    // let {Peter,Bill} = phoneBook
+    // console.log(Peter);
+    for (const key in phoneBook) {
+        console.log(`${key} -> ${phoneBook[key]}`);
+    }
 }
 
 makePhoneBook(['Tim 0834212554',
