@@ -2,20 +2,20 @@ function wordOccur(input) {
     const words = {};
 
     for (const currWord of input) {
-        if (!words.hasOwnProperty(currWord)) {
-            words[currWord] = 1;
-        } else {
-            words[currWord] += 1;
+        if (!words[currWord]) {
+            words[currWord] = 0;
         }
+
+        words[currWord]++;
     }
 
     let sorted = Object.entries(words).sort((a, b) => b[1] - a[1]);
 
-    for (const kvp of sorted) {
-        console.log(`${kvp[0]} -> ${kvp[1]} times`);
+    for (const [word, count] of sorted) {
+        console.log(`${word} -> ${count} times`);
     }
 }
 
 wordOccur(["Here", "is", "the", "first", "sentence",
-"Here", "is", "another", "sentence",
-"And", "finally", "the", "third", "sentence"]);
+    "Here", "is", "another", "sentence",
+    "And", "finally", "the", "third", "sentence"]);

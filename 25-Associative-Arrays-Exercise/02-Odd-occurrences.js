@@ -1,5 +1,6 @@
 function oddOccur(input) {
-    let elements = input.split(' ').map(a => a.toLowerCase());
+    let inputToString = input.join(' ');
+    let elements = inputToString.split(' ').map(a => a.toLowerCase());
 
     let elementsCount = {};
 
@@ -19,8 +20,9 @@ function oddOccur(input) {
             result += `${el[0]} `;
         }
     }
+    
     console.log(result);
 }
 
-oddOccur('Java C# Php PHP Java PhP 3 C# 3 1 5 C#');
-oddOccur('Cake IS SWEET is Soft CAKE sweet Food')
+oddOccur(['Java C# Php PHP Java PhP 3 C# 3 1 5 C#']);
+oddOccur(['Cake IS SWEET is Soft CAKE sweet Food']);
