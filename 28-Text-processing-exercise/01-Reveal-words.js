@@ -5,8 +5,9 @@ function wordReveal(words, text) {
         const match = `${'*'.repeat(word.length)}`;
         text = text.replace(match, word);
     });
+
     console.log(text);
 }
 
 wordReveal('great, learning',
-'softuni is ***** place for ******** new programming languages');
+    'softuni is ***** place for ******** new programming languages');
