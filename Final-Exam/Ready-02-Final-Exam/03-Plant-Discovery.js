@@ -1,7 +1,6 @@
 function solve(input) {
     let plantsCount = input.shift();
 
-
     let plantsArr = [];
     const allPlantsNames = [];
 
@@ -47,9 +46,8 @@ function solve(input) {
             let plant = plantData[0].trim();
             let rating = plantData[1];
 
-            if (!allPlantsNames.includes(plant) && allPlantsNames.length !== 0) {
+            if (!allPlantsNames.includes(plant)) {
                 console.log('error');
-                break;
             }
 
             for (let index = 0; index < plantsArr.length; index++) {
@@ -73,9 +71,8 @@ function solve(input) {
             let plant = plantData[0].trim();
             let newRarity = plantData[1].trim();
 
-            if (!allPlantsNames.includes(plant) && allPlantsNames.length !== 0) {
+            if (!allPlantsNames.includes(plant)) {
                 console.log('error');
-                break;
             }
 
             for (let index = 0; index < plantsArr.length; index++) {
@@ -88,13 +85,11 @@ function solve(input) {
                     plantsArr[index] = plantToStr;
                 }
             }
-
         } else if (command === 'Reset') {
             let plant = plantData.trim();
 
-            if (!allPlantsNames.includes(plant) && allPlantsNames.length !== 0) {
+            if (!allPlantsNames.includes(plant)) {
                 console.log('error');
-                break;
             }
 
             for (let index = 0; index < plantsArr.length; index++) {
@@ -137,23 +132,14 @@ function solve(input) {
         console.log(`- ${name}; Rarity: ${rarity}; Rating: ${averageRating.toFixed(2)}`);
     }
 }
-solve(["3",
-'Arnoldii<->4',
-'Woodii<->7',
-'Welwitschia<->2',
-"Rate: Woodii - 10",
-"Rate: Welwitschia - 7",
-"Rate: Arnoldii - 3",
-"Rate: Woodii - 5",
-"Update: Woodii - 5",
-"Reset: Arnoldii",
-'Rate: Woodii - 10',
-'Rate: Welwitschia - 7',
-'Rate: Arnoldii - 3',
-'Rate: Woodii - 5',
-'Update: Woodii - 5',
-'Reset: Arnoldii',
-"Exhibition"]);
+solve(["1",
+    'Arnoldii<->30',
+    'Rate: Arnoldii - 4',
+    'Rate: Arnoldii - 0',
+    'Update - 8',
+    'Rate: Arnoldii - 6',
+    'Reset: Arnoldii',
+    "Exhibition"]);
 
 // solve((['3',
 // 'Arnoldii<->4',
