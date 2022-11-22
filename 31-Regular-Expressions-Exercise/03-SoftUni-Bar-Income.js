@@ -18,6 +18,7 @@ function softuniBar(input) {
             let productPrice = count * price;
 
             console.log(`${customer}: ${product} - ${productPrice.toFixed(2)}`);
+
             totalIncome += productPrice;
 
             line = input.shift();
@@ -26,9 +27,10 @@ function softuniBar(input) {
             line = input.shift();
         }
     }
+
     console.log(`Total income: ${totalIncome.toFixed(2)}`);
 }
 softuniBar(['%George%<Croissant>|2|10.3$',
-'%Peter%<Gum>|1|1.3$',
-'%Maria%<Cola>|1|2.4$',
-'end of shift'])
+    '%Peter%<Gum>|1|1.3$',
+    '%Maria%<Cola>|1|2.4$',
+    'end of shift'])
