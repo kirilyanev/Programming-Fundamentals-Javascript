@@ -1,5 +1,6 @@
 function solve(input) {
-    let pattern = /(\|{1}|#{1})(?<itemName>[A-Za-z\s]+)\1(?<expiringDate>\d{2}\/\d{2}\/\d{2})\1(?<calories>\d*)\1/gm;
+    //let pattern = /(\|{1}|#{1})(?<itemName>[A-Za-z\s]+)\1(?<expiringDate>\d{2}\/\d{2}\/\d{2})\1(?<calories>\d*)\1/gm;
+    let pattern = /([\|#])(?<itemName>[A-Za-z ]+)\1(?<expiringDate>\d{2}\/\d{2}\/\d{2})\1(?<calories>\d+)\1/gm
     let text = input.shift();
     let allMatches = text.matchAll(pattern);
     //let allMatches = [...text.matchAll(pattern)];
