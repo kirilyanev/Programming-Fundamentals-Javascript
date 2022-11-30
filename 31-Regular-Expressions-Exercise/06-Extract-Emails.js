@@ -1,7 +1,9 @@
 function extractEmails(text) {
     //const pattern = /[A-Za-z0-9.-_]+@[a-z-]+.[a-z-]+/gm;
     //const pattern = /[A-Za-z0-9.-_]+@(?<name>[a-z-.]+)/gm;
-    const pattern = /(^|(?<=\s))(([A-za-z0-9]+)([\.\-_])?([A-Za-z0-9]+)(@)([A-za-z]+)([\.\-_]([A-za-z]+)+))(\b|(?=\s))/gm;
+    // const pattern = /(^|(?<=\s))(([A-za-z0-9]+)([\.\-_])?([A-Za-z0-9]+)(@)([A-za-z]+)([\.\-_]([A-za-z]+)+))(\b|(?=\s))/gm;
+
+    const pattern = /(^|(?<=\s))(([A-Za-z0-9]+)([\-\._]?)([A-Za-z0-9]+)(@)([A-Za-z]+([\-\._][A-Za-z]+)+))(\b|(?=\s))/gm
 
     let emails = text.match(pattern);
 
