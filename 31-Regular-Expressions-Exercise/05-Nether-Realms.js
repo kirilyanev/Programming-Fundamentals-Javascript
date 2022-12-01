@@ -1,22 +1,27 @@
 function solve(input) {
-    let demonsRegex = /[\w][^, ]+/gm;
-    let demons = input.match(demonsRegex);
+    //let demonsRegex = /[\w][^, ]+/gm;
+    //let demonsRegex = /[\w][^, ]+(?=')/gm;
+    //let demonsRegex = /\s*,\s*/gm;   - working Regex when used inside split()
+    //let demons = input.match(demonsRegex);
     // let demons = input.split(/[, ]+/g/);
     // let splitPattern = /, */g;
     // let demons = input[0].split(/,\s*/g);
+
+    let demons = input.split(/\s*,\s*/gm);
 
     let allDemons = [];
     let health = 0;
     let damage = 0;
 
     //const nameRegex = /(?<demon>[^ ,]+.+)/gm;
-    const nameRegex = /(?<demon>[^ ,]+\w*)/gm;
     //const healthRegex = /(?<health>[^0-9./\*+-])/gm;
     //const healthRegex = /([^\.\/\-+\*0-9]*)/gm;
-    const healthRegex = /[^\d\+\-*\/\.]/gm;
     // const damageRegex = /(?<damage>[\d\-+.]+)/gm;
     // regex 1 = /(?<damage>[-]*[\d.{1}\d]+)/gm;
     // const damageRegex = /(?<damage>[\d]|[\d\-+.]+)/gm;
+
+    const nameRegex = /(?<demon>[^ ,]+\w*)/gm;
+    const healthRegex = /[^\d\+\-*\/\.]/gm;
     const damageRegex = /(?:\+|-)?[0-9]+(?:\.[0-9]+)?/gm;
 
     for (const demon of demons) {
@@ -67,7 +72,7 @@ function solve(input) {
     }
 }
 solve('M3ph-0.5s-0.5t0.0**');
-// solve('M3ph1st0**, Azazel');
-solve('Gos/ho');
+solve('M3ph1st0**, Azazel');
+//solve('Gos/ho');
 // solve('m353');
 // solve('M3ph-0.5s-0.5t0.0**   ,M3ph1st0**, Azazel    Gos/ho   ,    m353')
