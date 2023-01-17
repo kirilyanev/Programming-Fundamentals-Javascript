@@ -1,6 +1,6 @@
 // My solution
 
-function isMagic(input) {
+function isMatrixMagic(input) {
     let rowSum = [];
     let colSum = [];
     let isMagical = true;
@@ -33,9 +33,9 @@ function isMagic(input) {
     }
 }
 
-isMagic([[4, 5, 6],[6, 5, 4],[5, 5, 5]]);
-isMagic([[1, 0, 0],[0, 1, 0]]);
-isMagic([[1, 0, 1],[0, 1, 0],[1, 0, 1]]);
+isMatrixMagic([[4, 5, 6],[6, 5, 4],[5, 5, 5]]);
+isMatrixMagic([[1, 0, 0],[0, 1, 0]]);
+isMatrixMagic([[1, 0, 1],[0, 1, 0],[1, 0, 1]]);
 
 // -------------------------------------------------------------
 
